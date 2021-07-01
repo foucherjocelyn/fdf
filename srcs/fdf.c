@@ -57,9 +57,11 @@ int	main(int argc, char **argv)
 	{
 		parse_map(&(fdf.map), argv[1]);
 		fdf.mlx.ptr = mlx_init();
-		fdf.mlx.win = mlx_new_window(fdf.mlx.ptr, 800, 600, "fdf");
-		fdf.data.img = mlx_new_image(fdf.mlx.ptr, 800, 600);
+		fdf.mlx.win = mlx_new_window(fdf.mlx.ptr, 1200, 600, "fdf");
+		fdf.data.img = mlx_new_image(fdf.mlx.ptr, 1200, 600);
 		fdf.data.addr = mlx_get_data_addr(fdf.data.img, &(fdf.data.bits_per_pixel), &(fdf.data.line_length), &(fdf.data.endian));
+		map_to_iso(fdf.map, &(fdf.iso));
+		draw_map(&fdf);
 		mlx_key_hook(fdf.mlx.win, key_hook, &(fdf.mlx));
 		mlx_mouse_hook(fdf.mlx.win, mouse_hook, &fdf);
 		mlx_loop(fdf.mlx.ptr);

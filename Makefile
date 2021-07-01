@@ -2,7 +2,7 @@ SRCS_DIR	= ./srcs
 
 OBJS_DIR	= ./objs
 
-SRCS		= fdf.c draw_line.c file_to_lst.c parse_map.c
+SRCS		= fdf.c draw_line.c file_to_lst.c parse_map.c cart_to_iso.c draw_map.c
 
 OBJS		= $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 
